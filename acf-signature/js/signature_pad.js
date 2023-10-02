@@ -57,8 +57,8 @@ var SignaturePad = (function(document) {
             }
         };
 
-        this._handleMouseMove = _.throttle(_handleMouseMove, self.throttle, self.throttleOptions);
-        //this._handleMouseMove = _handleMouseMove;
+        // this._handleMouseMove = _.throttle(_handleMouseMove, self.throttle, self.throttleOptions);
+        this._handleMouseMove = _handleMouseMove;
 
         this._handleMouseUp = function(event) {
             if (event.which === 1 && self._mouseButtonDown) {
@@ -85,8 +85,8 @@ var SignaturePad = (function(document) {
                 self._drawMark(point.x, point.y, 5);
             }
         };
-        this._handleTouchMove = _.throttle(_handleTouchMove, self.throttle, self.throttleOptions);
-        //this._handleTouchMove = _handleTouchMove;
+        // this._handleTouchMove = _.throttle(_handleTouchMove, self.throttle, self.throttleOptions);
+        this._handleTouchMove = _handleTouchMove;
 
         this._handleTouchEnd = function(event) {
             var wasCanvasTouched = event.target === self._canvas;
